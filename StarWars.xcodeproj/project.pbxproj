@@ -155,6 +155,7 @@
 		59887CC91AC203B6003D6FB7 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				CLASSPREFIX = FLG;
 				LastUpgradeCheck = 0620;
 				ORGANIZATIONNAME = FillinGAPPs;
 				TargetAttributes = {
