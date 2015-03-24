@@ -16,9 +16,17 @@
 
 // La App ha sido lanzada por el sistema operativo
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    
+    // Creamos una vista de tipo UIWindow: usamos el inicializador DESIGANDO (initWithFrame)
+    self.window = [[UIWindow alloc]
+                   initWithFrame:[[UIScreen mainScreen] bounds]];
+    // mainScreen: pantalla principal --> podríamos tener 2 pantallas con AirPlay
+    
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
+    self.window.backgroundColor = [UIColor orangeColor];
+    // orangeColor: método factory, método de clase
+    
+    // La mostramos
     [self.window makeKeyAndVisible];
     return YES;
 }
