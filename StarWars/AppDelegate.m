@@ -7,6 +7,8 @@
 //
 
 #import "AppDelegate.h"
+#import "FLGStarWarsCharacter.h"
+#import "FLGCharacterViewController.h"
 
 
 
@@ -21,6 +23,32 @@
     self.window = [[UIWindow alloc]
                    initWithFrame:[[UIScreen mainScreen] bounds]];
     // mainScreen: pantalla principal --> podríamos tener 2 pantallas con AirPlay
+    
+    
+    // Crear un modelo
+    NSURL *vaderURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Darth_Vader"];
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSData *vaderSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"vader" withExtension:@"caf"]];
+    // Apple recomienda usar los que se refieren a URLs y no a Files, aunque se trate de recursos almacenados en local
+    // Para obtener la URL absoluta a un fichero local, se la preguntamos a una instancia de NSBundle
+    
+    UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
+    // La buscará en el bundle principal
+    
+    FLGStarWarsCharacter *model = [[FLGStarWarsCharacter alloc] initWithName:@"Anakin Skywalker"
+                                                                       alias:@"Darth Vader"
+                                                                         url:vaderURL
+                                                                   soundData:vaderSound
+                                                                       photo:vaderImage];
+    
+    // Creamos un controlador que lo muestre
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:model];
+    
+    
+    // Mostramos el controlador en pantalla
+    self.window.rootViewController = charVC;
+    
     
     // Override point for customization after application launch.
     self.window.backgroundColor = [UIColor orangeColor];
