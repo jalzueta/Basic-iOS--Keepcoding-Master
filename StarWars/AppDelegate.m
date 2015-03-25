@@ -133,7 +133,8 @@
     
     // Si hay más items que los que caben en la barra del tabBar, el último elemento pasa a ser "..." y al pulsarse, el propio sistema muestra una tabla con los elementos que no caben en la barra
     // Ojo con meter muchos, ya que se cargan todos en memoria y eso puede ser peligroso...
-    return @[vader, chewie, c3po, yoda, r2d2, r2d2, r2d2, vader, chewie, c3po];
+//    return @[vader, chewie, c3po, yoda, r2d2, r2d2, r2d2, vader, chewie, c3po];
+    return @[vader, chewie, c3po, yoda, r2d2];
 }
 
 

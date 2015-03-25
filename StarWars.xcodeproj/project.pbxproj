@@ -36,6 +36,7 @@
 		59B02D881AC34E6000FC0463 /* FLGWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */; };
 		59B02D8B1AC3598B00FC0463 /* icono_alumno.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D891AC3598B00FC0463 /* icono_alumno.png */; };
 		59B02D8C1AC3598B00FC0463 /* icono_practica.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D8A1AC3598B00FC0463 /* icono_practica.png */; };
+		59B02D901AC3768D00FC0463 /* FLGStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -87,6 +88,8 @@
 		59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGWikiViewController.xib; sourceTree = "<group>"; };
 		59B02D891AC3598B00FC0463 /* icono_alumno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icono_alumno.png; sourceTree = "<group>"; };
 		59B02D8A1AC3598B00FC0463 /* icono_practica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icono_practica.png; sourceTree = "<group>"; };
+		59B02D8E1AC3768D00FC0463 /* FLGStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGStarWarsUniverse.h; sourceTree = "<group>"; };
+		59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGStarWarsUniverse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -172,6 +175,8 @@
 			children = (
 				59887CF41AC215C6003D6FB7 /* FLGStarWarsCharacter.h */,
 				59887CF51AC215C6003D6FB7 /* FLGStarWarsCharacter.m */,
+				59B02D8E1AC3768D00FC0463 /* FLGStarWarsUniverse.h */,
+				59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				59887D001AC21A88003D6FB7 /* FLGCharacterViewController.m in Sources */,
 				59887CDA1AC203B6003D6FB7 /* AppDelegate.m in Sources */,
 				59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */,
+				59B02D901AC3768D00FC0463 /* FLGStarWarsUniverse.m in Sources */,
 				59887CF61AC215C6003D6FB7 /* FLGStarWarsCharacter.m in Sources */,
 				59887CD71AC203B6003D6FB7 /* main.m in Sources */,
 			);
