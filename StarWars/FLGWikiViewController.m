@@ -48,7 +48,27 @@
     [self.activityView stopAnimating];
 }
 
-
+// Vamos a controlar con este metodo la navegación dentro del webView
+- (BOOL) webView:(UIWebView *)webView
+shouldStartLoadWithRequest:(NSURLRequest *)request
+  navigationType:(UIWebViewNavigationType)navigationType{
+    
+    // Así no funciona, porque se hacen ciertas reconversiones de la URL que no controlamos
+//    if ([request.URL isEqual:self.model.wikiURL]) {
+//        return YES;
+//    }
+//    else{
+//        return NO;
+//    }
+    
+    // Ponemos "UIWebViewNavigationTypeFormSubmitted" porque en la pagina de wikipedia hay un pequeño formulario en la parte de arriba
+    if ((navigationType == UIWebViewNavigationTypeLinkClicked) || (navigationType == UIWebViewNavigationTypeFormSubmitted)) {
+        return NO;
+    }
+    else{
+        return YES;
+    }
+}
 
 
 
