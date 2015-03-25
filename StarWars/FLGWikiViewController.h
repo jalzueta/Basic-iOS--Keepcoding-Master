@@ -9,9 +9,11 @@
 #import <UIKit/UIKit.h>
 #import "FLGStarWarsCharacter.h"
 
-@interface FLGWikiViewController : UIViewController
+// UIWebViewDelegate: le decimos al mundo que este controlador puedes ser un delegado del WebView
+@interface FLGWikiViewController : UIViewController<UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *browser;
+@property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
 
 @property (strong, nonatomic) FLGStarWarsCharacter *model;
 
