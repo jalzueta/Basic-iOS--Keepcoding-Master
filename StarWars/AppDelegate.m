@@ -43,12 +43,19 @@
                                                                    soundData:vaderSound
                                                                        photo:vaderImage];
     
-    // Creamos un controlador que lo muestre
-//    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:model];
+    // Creamos los controlador de cada MVC
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:model];
     FLGWikiViewController *wikiVC = [[FLGWikiViewController alloc] initWithModel:model];
     
+    // Creo el combinador
+    
+    // ----------------------------- TabBarViewController -------------------------------
+    UITabBarController *tabVC = [[UITabBarController alloc] init];
+    tabVC.viewControllers = @[charVC, wikiVC];
+    // ----------------------------------------------------------------------------------
+    
     // Mostramos el controlador en pantalla
-    self.window.rootViewController = wikiVC;
+    self.window.rootViewController = tabVC;
     
     
     // Override point for customization after application launch.

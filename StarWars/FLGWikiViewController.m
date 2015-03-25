@@ -15,6 +15,10 @@
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
+        self.title = @"Wiki";
+        
+        // Asignamos el tabBarItem para cuando esté contenido en un tabBarController
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Wiki" image:[UIImage imageNamed:@"icono_practica.png"] tag:1];
     }
     return self;
 }
@@ -22,6 +26,9 @@
 
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // Asegurarse de que no se ocupa toda la pantalla cuando se esta en un combinador
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // Asignar delegados
     self.browser.delegate = self;
@@ -40,6 +47,15 @@
 }
 
 #pragma mark - UIWebViewDelegate
+
+- (void) webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error{
+    
+    // Paro y oculto el activityView
+    [self.activityView setHidden:YES];
+    [self.activityView stopAnimating];
+    
+    NSLog(@"Error en la carga: %@", error);
+}
 
 - (void) webViewDidFinishLoad:(UIWebView *)webView{
     

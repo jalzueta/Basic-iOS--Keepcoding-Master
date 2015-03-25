@@ -19,6 +19,10 @@
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
+        self.title = model.alias;
+        
+        // Asignamos el tabBarItem para cuando esté contenido en un tabBarController
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Char" image:[UIImage imageNamed:@"icono_alumno.png"] tag:0];
     }
     return self;
 }
@@ -35,6 +39,9 @@
  // la vista está apunto de aparecer, esta cargada, con el tamaño correctos... despues del viewDidLoad
 - (void) viewWillAppear:(BOOL)animated{
     [super viewWillAppear:animated];
+    
+    // Asegurarse de que no se ocupa toda la pantalla cuando se esta en un combinador
+    self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // Sincronizar model -> vista
     self.photoView.image = self.model.photo;
