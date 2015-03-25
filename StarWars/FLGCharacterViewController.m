@@ -8,8 +8,9 @@
 
 #import "FLGCharacterViewController.h"
 
-
 @implementation FLGCharacterViewController
+
+#pragma mark - Init
 
 - (id) initWithModel: (FLGStarWarsCharacter *) model{
     // NibName: lo mismo que un XIB, pero con formato distinto (compilado en formato binario) --> ponemos "nil" para que aplique cierto comportamiento por defecto
@@ -40,10 +41,22 @@
     
 }
 
+#pragma mark - Memory
+
 // el dispositivo avisa a las Apps de que se está quedando sin memoria y cada App llama a estos métodos de todos los controladores. Es momento de "soltar lastre" para que el S.O. no nos mate a nosotros sino al resto de Apps
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+#pragma mark - Actions
+
+// IBAction, Interface Builder
+- (IBAction)playSound:(id)sender{
+    
+    // Sacamos el sonido del modelo y lo reproducimos
+    self.player = [CafPlayer cafPlayer];
+    [self.player playSoundData:self.model.soundData];
 }
 
 

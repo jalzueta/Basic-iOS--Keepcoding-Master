@@ -31,6 +31,7 @@
 		59887D201AC22818003D6FB7 /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = 59887D101AC22818003D6FB7 /* vader.caf */; };
 		59887D211AC22818003D6FB7 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 59887D111AC22818003D6FB7 /* yoda.caf */; };
 		59887D221AC22818003D6FB7 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59887D121AC22818003D6FB7 /* yoda.jpg */; };
+		59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D811AC346BE00FC0463 /* CafPlayer.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +76,8 @@
 		59887D101AC22818003D6FB7 /* vader.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vader.caf; sourceTree = "<group>"; };
 		59887D111AC22818003D6FB7 /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		59887D121AC22818003D6FB7 /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
+		59B02D801AC346BE00FC0463 /* CafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafPlayer.h; sourceTree = "<group>"; };
+		59B02D811AC346BE00FC0463 /* CafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafPlayer.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +125,7 @@
 				59887CDD1AC203B6003D6FB7 /* LaunchScreen.xib */,
 				59887CF71AC215CC003D6FB7 /* Models */,
 				59887D021AC21A8C003D6FB7 /* Controllers */,
+				59B02D831AC3470800FC0463 /* Sound */,
 				59887D231AC22820003D6FB7 /* Resources */,
 				59887CD41AC203B6003D6FB7 /* Supporting Files */,
 			);
@@ -194,6 +198,15 @@
 				59887D121AC22818003D6FB7 /* yoda.jpg */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		59B02D831AC3470800FC0463 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				59B02D801AC346BE00FC0463 /* CafPlayer.h */,
+				59B02D811AC346BE00FC0463 /* CafPlayer.m */,
+			);
+			name = Sound;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +329,7 @@
 			files = (
 				59887D001AC21A88003D6FB7 /* FLGCharacterViewController.m in Sources */,
 				59887CDA1AC203B6003D6FB7 /* AppDelegate.m in Sources */,
+				59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */,
 				59887CF61AC215C6003D6FB7 /* FLGStarWarsCharacter.m in Sources */,
 				59887CD71AC203B6003D6FB7 /* main.m in Sources */,
 			);
@@ -506,6 +520,7 @@
 				59887CF01AC203B6003D6FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59887CF11AC203B6003D6FB7 /* Build configuration list for PBXNativeTarget "StarWarsTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +529,7 @@
 				59887CF31AC203B6003D6FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
