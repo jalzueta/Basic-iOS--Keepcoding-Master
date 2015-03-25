@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "FLGStarWarsCharacter.h"
 #import "FLGCharacterViewController.h"
+#import "FLGWikiViewController.h"
 
 
 
@@ -43,11 +44,11 @@
                                                                        photo:vaderImage];
     
     // Creamos un controlador que lo muestre
-    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:model];
-    
+//    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:model];
+    FLGWikiViewController *wikiVC = [[FLGWikiViewController alloc] initWithModel:model];
     
     // Mostramos el controlador en pantalla
-    self.window.rootViewController = charVC;
+    self.window.rootViewController = wikiVC;
     
     
     // Override point for customization after application launch.

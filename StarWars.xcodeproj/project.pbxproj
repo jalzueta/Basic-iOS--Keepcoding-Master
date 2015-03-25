@@ -32,6 +32,8 @@
 		59887D211AC22818003D6FB7 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 59887D111AC22818003D6FB7 /* yoda.caf */; };
 		59887D221AC22818003D6FB7 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59887D121AC22818003D6FB7 /* yoda.jpg */; };
 		59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D811AC346BE00FC0463 /* CafPlayer.m */; };
+		59B02D871AC34E6000FC0463 /* FLGWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */; };
+		59B02D881AC34E6000FC0463 /* FLGWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -78,6 +80,9 @@
 		59887D121AC22818003D6FB7 /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
 		59B02D801AC346BE00FC0463 /* CafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafPlayer.h; sourceTree = "<group>"; };
 		59B02D811AC346BE00FC0463 /* CafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafPlayer.m; sourceTree = "<group>"; };
+		59B02D841AC34E6000FC0463 /* FLGWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGWikiViewController.h; sourceTree = "<group>"; };
+		59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGWikiViewController.m; sourceTree = "<group>"; };
+		59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGWikiViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +178,9 @@
 				59887CFD1AC21A88003D6FB7 /* FLGCharacterViewController.h */,
 				59887CFE1AC21A88003D6FB7 /* FLGCharacterViewController.m */,
 				59887CFF1AC21A88003D6FB7 /* FLGCharacterViewController.xib */,
+				59B02D841AC34E6000FC0463 /* FLGWikiViewController.h */,
+				59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */,
+				59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -297,6 +305,7 @@
 				59887D131AC22818003D6FB7 /* c3po.jpg in Resources */,
 				59887D1B1AC22818003D6FB7 /* palpatine.jpg in Resources */,
 				59887D1E1AC22818003D6FB7 /* tarkin.caf in Resources */,
+				59B02D881AC34E6000FC0463 /* FLGWikiViewController.xib in Resources */,
 				59887CDF1AC203B6003D6FB7 /* LaunchScreen.xib in Resources */,
 				59887D221AC22818003D6FB7 /* yoda.jpg in Resources */,
 				59887D181AC22818003D6FB7 /* icon.png in Resources */,
@@ -327,6 +336,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B02D871AC34E6000FC0463 /* FLGWikiViewController.m in Sources */,
 				59887D001AC21A88003D6FB7 /* FLGCharacterViewController.m in Sources */,
 				59887CDA1AC203B6003D6FB7 /* AppDelegate.m in Sources */,
 				59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */,
