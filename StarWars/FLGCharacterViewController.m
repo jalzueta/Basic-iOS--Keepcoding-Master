@@ -23,7 +23,7 @@
         self.title = model.alias;
         
         // Asignamos el tabBarItem para cuando esté contenido en un tabBarController
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Char" image:[UIImage imageNamed:@"icono_alumno.png"] tag:0];
+        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:model.alias image:[UIImage imageNamed:@"icono_alumno.png"] tag:0];
     }
     return self;
 }
