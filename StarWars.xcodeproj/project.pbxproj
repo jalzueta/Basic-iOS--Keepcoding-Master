@@ -31,6 +31,12 @@
 		59887D201AC22818003D6FB7 /* vader.caf in Resources */ = {isa = PBXBuildFile; fileRef = 59887D101AC22818003D6FB7 /* vader.caf */; };
 		59887D211AC22818003D6FB7 /* yoda.caf in Resources */ = {isa = PBXBuildFile; fileRef = 59887D111AC22818003D6FB7 /* yoda.caf */; };
 		59887D221AC22818003D6FB7 /* yoda.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59887D121AC22818003D6FB7 /* yoda.jpg */; };
+		59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D811AC346BE00FC0463 /* CafPlayer.m */; };
+		59B02D871AC34E6000FC0463 /* FLGWikiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */; };
+		59B02D881AC34E6000FC0463 /* FLGWikiViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */; };
+		59B02D8B1AC3598B00FC0463 /* icono_alumno.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D891AC3598B00FC0463 /* icono_alumno.png */; };
+		59B02D8C1AC3598B00FC0463 /* icono_practica.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D8A1AC3598B00FC0463 /* icono_practica.png */; };
+		59B02D901AC3768D00FC0463 /* FLGStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +81,15 @@
 		59887D101AC22818003D6FB7 /* vader.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = vader.caf; sourceTree = "<group>"; };
 		59887D111AC22818003D6FB7 /* yoda.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = yoda.caf; sourceTree = "<group>"; };
 		59887D121AC22818003D6FB7 /* yoda.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yoda.jpg; sourceTree = "<group>"; };
+		59B02D801AC346BE00FC0463 /* CafPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CafPlayer.h; sourceTree = "<group>"; };
+		59B02D811AC346BE00FC0463 /* CafPlayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CafPlayer.m; sourceTree = "<group>"; };
+		59B02D841AC34E6000FC0463 /* FLGWikiViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGWikiViewController.h; sourceTree = "<group>"; };
+		59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGWikiViewController.m; sourceTree = "<group>"; };
+		59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FLGWikiViewController.xib; sourceTree = "<group>"; };
+		59B02D891AC3598B00FC0463 /* icono_alumno.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icono_alumno.png; sourceTree = "<group>"; };
+		59B02D8A1AC3598B00FC0463 /* icono_practica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icono_practica.png; sourceTree = "<group>"; };
+		59B02D8E1AC3768D00FC0463 /* FLGStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGStarWarsUniverse.h; sourceTree = "<group>"; };
+		59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGStarWarsUniverse.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,6 +137,7 @@
 				59887CDD1AC203B6003D6FB7 /* LaunchScreen.xib */,
 				59887CF71AC215CC003D6FB7 /* Models */,
 				59887D021AC21A8C003D6FB7 /* Controllers */,
+				59B02D831AC3470800FC0463 /* Sound */,
 				59887D231AC22820003D6FB7 /* Resources */,
 				59887CD41AC203B6003D6FB7 /* Supporting Files */,
 			);
@@ -159,6 +175,8 @@
 			children = (
 				59887CF41AC215C6003D6FB7 /* FLGStarWarsCharacter.h */,
 				59887CF51AC215C6003D6FB7 /* FLGStarWarsCharacter.m */,
+				59B02D8E1AC3768D00FC0463 /* FLGStarWarsUniverse.h */,
+				59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -169,6 +187,9 @@
 				59887CFD1AC21A88003D6FB7 /* FLGCharacterViewController.h */,
 				59887CFE1AC21A88003D6FB7 /* FLGCharacterViewController.m */,
 				59887CFF1AC21A88003D6FB7 /* FLGCharacterViewController.xib */,
+				59B02D841AC34E6000FC0463 /* FLGWikiViewController.h */,
+				59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */,
+				59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -176,6 +197,7 @@
 		59887D231AC22820003D6FB7 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				59B02D8D1AC3599700FC0463 /* TabBar */,
 				59887D031AC22818003D6FB7 /* c3po.jpg */,
 				59887D041AC22818003D6FB7 /* c3po.caf */,
 				59887D051AC22818003D6FB7 /* chewbacca.caf */,
@@ -194,6 +216,24 @@
 				59887D121AC22818003D6FB7 /* yoda.jpg */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		59B02D831AC3470800FC0463 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				59B02D801AC346BE00FC0463 /* CafPlayer.h */,
+				59B02D811AC346BE00FC0463 /* CafPlayer.m */,
+			);
+			name = Sound;
+			sourceTree = "<group>";
+		};
+		59B02D8D1AC3599700FC0463 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				59B02D891AC3598B00FC0463 /* icono_alumno.png */,
+				59B02D8A1AC3598B00FC0463 /* icono_practica.png */,
+			);
+			name = TabBar;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -284,10 +324,12 @@
 				59887D131AC22818003D6FB7 /* c3po.jpg in Resources */,
 				59887D1B1AC22818003D6FB7 /* palpatine.jpg in Resources */,
 				59887D1E1AC22818003D6FB7 /* tarkin.caf in Resources */,
+				59B02D881AC34E6000FC0463 /* FLGWikiViewController.xib in Resources */,
 				59887CDF1AC203B6003D6FB7 /* LaunchScreen.xib in Resources */,
 				59887D221AC22818003D6FB7 /* yoda.jpg in Resources */,
 				59887D181AC22818003D6FB7 /* icon.png in Resources */,
 				59887D171AC22818003D6FB7 /* darthVader.jpg in Resources */,
+				59B02D8B1AC3598B00FC0463 /* icono_alumno.png in Resources */,
 				59887D211AC22818003D6FB7 /* yoda.caf in Resources */,
 				59887D1A1AC22818003D6FB7 /* palpatine.caf in Resources */,
 				59887D151AC22818003D6FB7 /* chewbacca.caf in Resources */,
@@ -295,6 +337,7 @@
 				59887D201AC22818003D6FB7 /* vader.caf in Resources */,
 				59887D011AC21A88003D6FB7 /* FLGCharacterViewController.xib in Resources */,
 				59887D141AC22818003D6FB7 /* c3po.caf in Resources */,
+				59B02D8C1AC3598B00FC0463 /* icono_practica.png in Resources */,
 				59887CDC1AC203B6003D6FB7 /* Images.xcassets in Resources */,
 				59887D161AC22818003D6FB7 /* chewbacca.jpg in Resources */,
 			);
@@ -314,8 +357,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59B02D871AC34E6000FC0463 /* FLGWikiViewController.m in Sources */,
 				59887D001AC21A88003D6FB7 /* FLGCharacterViewController.m in Sources */,
 				59887CDA1AC203B6003D6FB7 /* AppDelegate.m in Sources */,
+				59B02D821AC346BE00FC0463 /* CafPlayer.m in Sources */,
+				59B02D901AC3768D00FC0463 /* FLGStarWarsUniverse.m in Sources */,
 				59887CF61AC215C6003D6FB7 /* FLGStarWarsCharacter.m in Sources */,
 				59887CD71AC203B6003D6FB7 /* main.m in Sources */,
 			);
@@ -506,6 +552,7 @@
 				59887CF01AC203B6003D6FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		59887CF11AC203B6003D6FB7 /* Build configuration list for PBXNativeTarget "StarWarsTests" */ = {
 			isa = XCConfigurationList;
@@ -514,6 +561,7 @@
 				59887CF31AC203B6003D6FB7 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
