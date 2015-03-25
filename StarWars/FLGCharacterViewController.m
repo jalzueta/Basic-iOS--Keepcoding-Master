@@ -7,6 +7,7 @@
 //
 
 #import "FLGCharacterViewController.h"
+#import "FLGWikiViewController.h"
 
 @implementation FLGCharacterViewController
 
@@ -64,6 +65,15 @@
     // Sacamos el sonido del modelo y lo reproducimos
     self.player = [CafPlayer cafPlayer];
     [self.player playSoundData:self.model.soundData];
+}
+
+- (IBAction)displayWiki:(id)sender{
+    
+    // Crear un wikiVC
+    FLGWikiViewController *wikiVC = [[FLGWikiViewController alloc] initWithModel:self.model];
+    
+    // Hacer un push usando la propiedad "navigationController" que tiene todo UIViewController
+    [self.navigationController pushViewController:wikiVC animated:YES];
 }
 
 

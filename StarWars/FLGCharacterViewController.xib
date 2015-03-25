@@ -28,6 +28,12 @@
                                 <action selector="playSound:" destination="-1" id="Glg-Lb-dBv"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem style="plain" systemItem="flexibleSpace" id="fRj-HH-Klt"/>
+                        <barButtonItem title="Wiki" id="k91-uz-pyl">
+                            <connections>
+                                <action selector="displayWiki:" destination="-1" id="auu-ux-23p"/>
+                            </connections>
+                        </barButtonItem>
                     </items>
                 </toolbar>
             </subviews>

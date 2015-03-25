@@ -22,4 +22,7 @@
 
 - (id) initWithModel: (FLGStarWarsCharacter *) model;
 
+- (IBAction)playSound:(id)sender;
+- (IBAction)displayWiki:(id)sender;
+
 @end

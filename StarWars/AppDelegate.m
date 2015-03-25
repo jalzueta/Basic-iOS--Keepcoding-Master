@@ -45,17 +45,16 @@
     
     // Creamos los controlador de cada MVC
     FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:model];
-    FLGWikiViewController *wikiVC = [[FLGWikiViewController alloc] initWithModel:model];
     
     // Creo el combinador
     
-    // ----------------------------- TabBarViewController -------------------------------
-    UITabBarController *tabVC = [[UITabBarController alloc] init];
-    tabVC.viewControllers = @[charVC, wikiVC];
+    // ----------------------------- NavigationController -------------------------------
+    UINavigationController *navVC = [[UINavigationController alloc] init];
+    [navVC pushViewController:charVC animated:NO];
     // ----------------------------------------------------------------------------------
     
     // Mostramos el controlador en pantalla
-    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     
     
     // Override point for customization after application launch.
