@@ -30,7 +30,7 @@
     FLGStarWarsUniverse *universe = [[FLGStarWarsUniverse alloc] init];
     
     // Creamos un controlador
-    FLGUniverseTableViewController *tableVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStylePlain];
+    FLGUniverseTableViewController *tableVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
     
     // Creo el combinador
     UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:tableVC];

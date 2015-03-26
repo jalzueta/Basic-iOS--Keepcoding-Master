@@ -43,7 +43,7 @@
         // Para obtener la URL absoluta a un fichero local, se la preguntamos a una instancia de NSBundle
         
         UIImage *vaderImage = [UIImage imageNamed:@"darthVader.jpg"];
-        UIImage *vaderThumbnail = [UIImage imageNamed:@"vader-icon.jpg"];
+        UIImage *vaderThumbnail = [UIImage imageNamed:@"vader-icon.png"];
         // La buscará en el bundle principal
         
         FLGStarWarsCharacter *vader = [[FLGStarWarsCharacter alloc] initWithName:@"Anakin Skywalker"
@@ -57,7 +57,7 @@
         NSURL *chewieURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Chewbacca"];
         NSData *chewieSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"chewbacca" withExtension:@"caf"]];
         UIImage *chewieImage = [UIImage imageNamed:@"chewbacca.jpg"];
-        UIImage *chewieThumbnail = [UIImage imageNamed:@"chewbacca-icon.jpg"];
+        UIImage *chewieThumbnail = [UIImage imageNamed:@"chewbacca-icon.png"];
         FLGStarWarsCharacter *chewie = [[FLGStarWarsCharacter alloc] initWithAlias:@"Chewbacca"
                                                                                url:chewieURL
                                                                          soundData:chewieSound
@@ -68,7 +68,7 @@
         NSURL *c3poURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/C-3PO"];
         NSData *c3poSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"c3po" withExtension:@"caf"]];
         UIImage *c3poImage = [UIImage imageNamed:@"c3po.jpg"];
-        UIImage *c3poThumbnail = [UIImage imageNamed:@"C3PO-icon.jpg"];
+        UIImage *c3poThumbnail = [UIImage imageNamed:@"C3PO-icon.png"];
         FLGStarWarsCharacter *c3po = [[FLGStarWarsCharacter alloc] initWithAlias:@"C-3PO"
                                                                              url:c3poURL
                                                                        soundData:c3poSound
@@ -79,7 +79,7 @@
         NSURL *yodaURL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/Yoda"];
         NSData *yodaSound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"yoda" withExtension:@"caf"]];
         UIImage *yodaImage = [UIImage imageNamed:@"yoda.jpg"];
-        UIImage *yodaThumbnail = [UIImage imageNamed:@"yoda-icon.jpg"];
+        UIImage *yodaThumbnail = [UIImage imageNamed:@"yoda-icon.png"];
         FLGStarWarsCharacter *yoda = [[FLGStarWarsCharacter alloc] initWithName:@"Minch Yoda"
                                                                           alias:@"Master Yoda"
                                                                             url:yodaURL
@@ -91,7 +91,7 @@
         NSURL *r2d2URL = [NSURL URLWithString:@"http://en.wikipedia.org/wiki/R2-D2"];
         NSData *r2d2Sound = [NSData dataWithContentsOfURL:[bundle URLForResource:@"r2-d2" withExtension:@"caf"]];
         UIImage *r2d2Image = [UIImage imageNamed:@"R2-D2.jpg"];
-        UIImage *r2d2Thumbnail = [UIImage imageNamed:@"R2D2-icon.jpg"];
+        UIImage *r2d2Thumbnail = [UIImage imageNamed:@"R2D2-icon.png"];
         FLGStarWarsCharacter *r2d2 = [[FLGStarWarsCharacter alloc] initWithAlias:@"R2-D2"
                                                                              url:r2d2URL
                                                                        soundData:r2d2Sound

@@ -8,6 +8,7 @@
 
 @import UIKit;
 #import "FLGUniverseTableViewController.h"
+#import "FLGCharacterViewController.h"
 
 @interface FLGUniverseTableViewController ()
 
@@ -64,12 +65,7 @@
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
     // Averiguar de que modelo (personaje) me está hablando
-    FLGStarWarsCharacter *character = nil;
-    if (indexPath.section == IMPERIAL_SECTION) {
-        character = [self.model imperialAtIndex:indexPath.row];
-    }else{
-        character = [self.model rebelAtIndex:indexPath.row];
-    }
+    FLGStarWarsCharacter *character = [self characterAtIndexPath:indexPath];
     
     // Crear una celda
     static NSString *cellId = @"StarWarsCell"; // al ser "static" solo se va a asignar la primera vez que se entre en este método. Las siguientes veces, simplemente se recuperará el valor guardado.
@@ -85,7 +81,7 @@
     
     // Configurarla
     // Sincronizamos modelo (personaje) -> vista (celda)
-    cell.imageView.image = character.photo;
+    cell.imageView.image = character.thumbnail;
     cell.textLabel.text = character.alias;
     cell.detailTextLabel.text = character.name;
     
@@ -137,5 +133,33 @@
 }
 */
 
+
+#pragma mark - Table view delegate
+
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+    // Averiguar de qué modelo (personaje) me están hablando
+    FLGStarWarsCharacter *character = [self characterAtIndexPath:indexPath];
+    
+    // Crear el controlador de character
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:character];
+    
+    // Hacer un "push" al navigation controller
+    [self.navigationController pushViewController:charVC
+                                         animated:YES];
+}
+
+
+#pragma mark - Utils
+
+- (FLGStarWarsCharacter *) characterAtIndexPath: (NSIndexPath *) indexPath{
+    FLGStarWarsCharacter *character = nil;
+    if (indexPath.section == IMPERIAL_SECTION) {
+        character = [self.model imperialAtIndex:indexPath.row];
+    }else{
+        character = [self.model rebelAtIndex:indexPath.row];
+    }
+    return character;
+}
 
 @end
