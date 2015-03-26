@@ -37,6 +37,16 @@
 		59B02D8B1AC3598B00FC0463 /* icono_alumno.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D891AC3598B00FC0463 /* icono_alumno.png */; };
 		59B02D8C1AC3598B00FC0463 /* icono_practica.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D8A1AC3598B00FC0463 /* icono_practica.png */; };
 		59B02D901AC3768D00FC0463 /* FLGStarWarsUniverse.m in Sources */ = {isa = PBXBuildFile; fileRef = 59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */; };
+		59B02D9B1AC457B400FC0463 /* c-3po_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D911AC457B400FC0463 /* c-3po_icon.png */; };
+		59B02D9C1AC457B400FC0463 /* c-3po_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D921AC457B400FC0463 /* c-3po_icon@2x.png */; };
+		59B02D9D1AC457B400FC0463 /* chewbacca_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D931AC457B400FC0463 /* chewbacca_icon.png */; };
+		59B02D9E1AC457B400FC0463 /* chewbacca_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D941AC457B400FC0463 /* chewbacca_icon@2x.png */; };
+		59B02D9F1AC457B400FC0463 /* r2d2_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D951AC457B400FC0463 /* r2d2_icon.png */; };
+		59B02DA01AC457B400FC0463 /* r2d2_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D961AC457B400FC0463 /* r2d2_icon@2x.png */; };
+		59B02DA11AC457B400FC0463 /* vader_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D971AC457B400FC0463 /* vader_icon.png */; };
+		59B02DA21AC457B400FC0463 /* vader_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D981AC457B400FC0463 /* vader_icon@2x.png */; };
+		59B02DA31AC457B400FC0463 /* yoda_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D991AC457B400FC0463 /* yoda_icon.png */; };
+		59B02DA41AC457B400FC0463 /* yoda_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 59B02D9A1AC457B400FC0463 /* yoda_icon@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,6 +100,16 @@
 		59B02D8A1AC3598B00FC0463 /* icono_practica.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icono_practica.png; sourceTree = "<group>"; };
 		59B02D8E1AC3768D00FC0463 /* FLGStarWarsUniverse.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGStarWarsUniverse.h; sourceTree = "<group>"; };
 		59B02D8F1AC3768D00FC0463 /* FLGStarWarsUniverse.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGStarWarsUniverse.m; sourceTree = "<group>"; };
+		59B02D911AC457B400FC0463 /* c-3po_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-3po_icon.png"; sourceTree = "<group>"; };
+		59B02D921AC457B400FC0463 /* c-3po_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "c-3po_icon@2x.png"; sourceTree = "<group>"; };
+		59B02D931AC457B400FC0463 /* chewbacca_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = chewbacca_icon.png; sourceTree = "<group>"; };
+		59B02D941AC457B400FC0463 /* chewbacca_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "chewbacca_icon@2x.png"; sourceTree = "<group>"; };
+		59B02D951AC457B400FC0463 /* r2d2_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = r2d2_icon.png; sourceTree = "<group>"; };
+		59B02D961AC457B400FC0463 /* r2d2_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "r2d2_icon@2x.png"; sourceTree = "<group>"; };
+		59B02D971AC457B400FC0463 /* vader_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vader_icon.png; sourceTree = "<group>"; };
+		59B02D981AC457B400FC0463 /* vader_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "vader_icon@2x.png"; sourceTree = "<group>"; };
+		59B02D991AC457B400FC0463 /* yoda_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = yoda_icon.png; sourceTree = "<group>"; };
+		59B02D9A1AC457B400FC0463 /* yoda_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "yoda_icon@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -230,6 +250,16 @@
 		59B02D8D1AC3599700FC0463 /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
+				59B02D911AC457B400FC0463 /* c-3po_icon.png */,
+				59B02D921AC457B400FC0463 /* c-3po_icon@2x.png */,
+				59B02D931AC457B400FC0463 /* chewbacca_icon.png */,
+				59B02D941AC457B400FC0463 /* chewbacca_icon@2x.png */,
+				59B02D951AC457B400FC0463 /* r2d2_icon.png */,
+				59B02D961AC457B400FC0463 /* r2d2_icon@2x.png */,
+				59B02D971AC457B400FC0463 /* vader_icon.png */,
+				59B02D981AC457B400FC0463 /* vader_icon@2x.png */,
+				59B02D991AC457B400FC0463 /* yoda_icon.png */,
+				59B02D9A1AC457B400FC0463 /* yoda_icon@2x.png */,
 				59B02D891AC3598B00FC0463 /* icono_alumno.png */,
 				59B02D8A1AC3598B00FC0463 /* icono_practica.png */,
 			);
@@ -320,22 +350,32 @@
 			files = (
 				59887D191AC22818003D6FB7 /* iconSmall.png in Resources */,
 				59887D1D1AC22818003D6FB7 /* R2-D2.jpg in Resources */,
+				59B02DA41AC457B400FC0463 /* yoda_icon@2x.png in Resources */,
 				59887D1F1AC22818003D6FB7 /* tarkin.jpg in Resources */,
 				59887D131AC22818003D6FB7 /* c3po.jpg in Resources */,
 				59887D1B1AC22818003D6FB7 /* palpatine.jpg in Resources */,
 				59887D1E1AC22818003D6FB7 /* tarkin.caf in Resources */,
+				59B02DA31AC457B400FC0463 /* yoda_icon.png in Resources */,
 				59B02D881AC34E6000FC0463 /* FLGWikiViewController.xib in Resources */,
+				59B02D9F1AC457B400FC0463 /* r2d2_icon.png in Resources */,
 				59887CDF1AC203B6003D6FB7 /* LaunchScreen.xib in Resources */,
+				59B02D9C1AC457B400FC0463 /* c-3po_icon@2x.png in Resources */,
+				59B02D9B1AC457B400FC0463 /* c-3po_icon.png in Resources */,
 				59887D221AC22818003D6FB7 /* yoda.jpg in Resources */,
+				59B02D9E1AC457B400FC0463 /* chewbacca_icon@2x.png in Resources */,
 				59887D181AC22818003D6FB7 /* icon.png in Resources */,
 				59887D171AC22818003D6FB7 /* darthVader.jpg in Resources */,
+				59B02DA11AC457B400FC0463 /* vader_icon.png in Resources */,
 				59B02D8B1AC3598B00FC0463 /* icono_alumno.png in Resources */,
 				59887D211AC22818003D6FB7 /* yoda.caf in Resources */,
 				59887D1A1AC22818003D6FB7 /* palpatine.caf in Resources */,
 				59887D151AC22818003D6FB7 /* chewbacca.caf in Resources */,
+				59B02DA21AC457B400FC0463 /* vader_icon@2x.png in Resources */,
+				59B02DA01AC457B400FC0463 /* r2d2_icon@2x.png in Resources */,
 				59887D1C1AC22818003D6FB7 /* r2-d2.caf in Resources */,
 				59887D201AC22818003D6FB7 /* vader.caf in Resources */,
 				59887D011AC21A88003D6FB7 /* FLGCharacterViewController.xib in Resources */,
+				59B02D9D1AC457B400FC0463 /* chewbacca_icon.png in Resources */,
 				59887D141AC22818003D6FB7 /* c3po.caf in Resources */,
 				59B02D8C1AC3598B00FC0463 /* icono_practica.png in Resources */,
 				59887CDC1AC203B6003D6FB7 /* Images.xcassets in Resources */,
