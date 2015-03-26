@@ -60,7 +60,6 @@
     }
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView
          cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     
@@ -78,7 +77,7 @@
     // dequeueReusableCellWithIdentifier: se usa para celda del sistema --> puede devolver "nil"
     // dequeueReusableCellWithIdentifier: forIndexPath: se usa para celdas personalidades --> necesita que le asignemos el "cellId" a una clase que herede de UITableViewCell, pero nunca devolverá "nil", sino que el mismo creará la celda nueva si esta no existe en cache para su reutilización
     if (cell == nil) {
-        // LA tenemos que crear nosotros
+        // La tenemos que crear nosotros
         cell = [[UITableViewCell alloc]
                 initWithStyle:UITableViewCellStyleSubtitle
                 reuseIdentifier:cellId];
@@ -92,6 +91,15 @@
     
     // Devolverla
     return cell;
+}
+
+- (NSString *) tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section{
+    
+    if (section == IMPERIAL_SECTION) {
+        return @"Imperials";
+    }else{
+        return @"Rebels";
+    }
 }
 
 
