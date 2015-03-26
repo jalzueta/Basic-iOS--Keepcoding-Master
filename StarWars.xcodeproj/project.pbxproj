@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		59848AB81AC4997A0011BB18 /* FLGUniverseTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 59848AB71AC4997A0011BB18 /* FLGUniverseTableViewController.m */; };
 		59887CD71AC203B6003D6FB7 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 59887CD61AC203B6003D6FB7 /* main.m */; };
 		59887CDA1AC203B6003D6FB7 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 59887CD91AC203B6003D6FB7 /* AppDelegate.m */; };
 		59887CDC1AC203B6003D6FB7 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 59887CDB1AC203B6003D6FB7 /* Images.xcassets */; };
@@ -60,6 +61,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		59848AB61AC4997A0011BB18 /* FLGUniverseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGUniverseTableViewController.h; sourceTree = "<group>"; };
+		59848AB71AC4997A0011BB18 /* FLGUniverseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGUniverseTableViewController.m; sourceTree = "<group>"; };
 		59887CD11AC203B6003D6FB7 /* StarWars.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StarWars.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		59887CD51AC203B6003D6FB7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59887CD61AC203B6003D6FB7 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -210,6 +213,8 @@
 				59B02D841AC34E6000FC0463 /* FLGWikiViewController.h */,
 				59B02D851AC34E6000FC0463 /* FLGWikiViewController.m */,
 				59B02D861AC34E6000FC0463 /* FLGWikiViewController.xib */,
+				59848AB61AC4997A0011BB18 /* FLGUniverseTableViewController.h */,
+				59848AB71AC4997A0011BB18 /* FLGUniverseTableViewController.m */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -397,6 +402,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59848AB81AC4997A0011BB18 /* FLGUniverseTableViewController.m in Sources */,
 				59B02D871AC34E6000FC0463 /* FLGWikiViewController.m in Sources */,
 				59887D001AC21A88003D6FB7 /* FLGCharacterViewController.m in Sources */,
 				59887CDA1AC203B6003D6FB7 /* AppDelegate.m in Sources */,
