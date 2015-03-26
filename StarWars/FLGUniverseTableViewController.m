@@ -141,12 +141,11 @@
     // Averiguar de qué modelo (personaje) me están hablando
     FLGStarWarsCharacter *character = [self characterAtIndexPath:indexPath];
     
-    // Crear el controlador de character
-    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:character];
-    
-    // Hacer un "push" al navigation controller
-    [self.navigationController pushViewController:charVC
-                                         animated:YES];
+    // Avisar al delegado (siempre y cuando entienda el mensaje)
+    if ([self.delegate respondsToSelector:@selector(universeTableViewController:didSelectCharacter:)]) {
+        // Envio el mensaje al delegado
+        [self.delegate universeTableViewController:self didSelectCharacter:character];
+    }
 }
 
 

@@ -20,10 +20,6 @@
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
-        self.title = model.alias;
-        
-        // Asignamos el tabBarItem para cuando esté contenido en un tabBarController
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:model.alias image:[UIImage imageNamed:@"icono_alumno.png"] tag:0];
     }
     return self;
 }
@@ -44,7 +40,8 @@
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
     // Sincronizar model -> vista
-    self.photoView.image = self.model.photo;
+    // Sincronizo modelo -> vista(s)
+    [self syncViewWithModel];
     
     //TODO: detectar la situacion de orientacion inicial y adaptar el boton del SplitViewController
     if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
@@ -102,5 +99,28 @@
         self.navigationItem.leftBarButtonItem = nil;
     }
 }
+
+#pragma mark - FLGUniverseTableViewControllerDelegate
+
+- (void) universeTableViewController:(FLGUniverseTableViewController *)universeTableViewController
+                  didSelectCharacter:(FLGStarWarsCharacter *)character{
+    
+    
+    // Actualizo el modelo
+    self.model = character;
+    
+    // Sincronizo modelo -> vista(s)
+    [self syncViewWithModel];
+    
+    // Apaño para que al estar viendo la wiki y se cambie de personaje, se vuelva al detalle del personaje
+    [self.navigationController popToRootViewControllerAnimated:YES];
+    
+}
+
+- (void) syncViewWithModel{
+    self.title = self.model.alias;
+    self.photoView.image = self.model.photo;
+}
+
 
 @end

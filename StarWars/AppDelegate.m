@@ -43,6 +43,7 @@
     
     // Asignamos delegados
     spliVC.delegate = charVC;
+    universeVC.delegate = charVC;
     
     // Mostramos el controlador en pantalla
     self.window.rootViewController = spliVC;

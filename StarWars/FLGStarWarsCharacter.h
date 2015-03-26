@@ -11,8 +11,8 @@
 
 @interface FLGStarWarsCharacter : NSObject
 
-@property (strong, nonatomic) NSString *name;
-@property (strong, nonatomic) NSString *alias;
+@property (copy, nonatomic) NSString *name;
+@property (copy, nonatomic) NSString *alias;
 @property (strong, nonatomic) NSURL *wikiURL; // cadena con un extra, formato de URL
 @property (strong, nonatomic) NSData * soundData; // NSData: para guardar archivos binarios (como un buffer)
 @property (strong, nonatomic) UIImage *photo;
