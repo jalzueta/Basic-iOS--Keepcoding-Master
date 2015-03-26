@@ -16,6 +16,7 @@
 @property (strong, nonatomic) NSURL *wikiURL; // cadena con un extra, formato de URL
 @property (strong, nonatomic) NSData * soundData; // NSData: para guardar archivos binarios (como un buffer)
 @property (strong, nonatomic) UIImage *photo;
+@property (strong, nonatomic) UIImage *thumbnail;
 
 
 // designated init
@@ -23,11 +24,13 @@
               alias: (NSString *) alias
                 url: (NSURL *) wikiURL
           soundData: (NSData *) soundData
-              photo: (UIImage *) photo;
+              photo: (UIImage *) photo
+          thumbnail:  (UIImage *) thumbnail;
 
 - (id) initWithAlias: (NSString *) alias
                  url: (NSURL *) wikiURL
            soundData: (NSData *) soundData
-               photo: (UIImage *) photo;
+               photo: (UIImage *) photo
+           thumbnail:  (UIImage *) thumbnail;
 
 @end

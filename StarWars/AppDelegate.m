@@ -10,6 +10,7 @@
 #import "FLGCharacterViewController.h"
 #import "FLGWikiViewController.h"
 #import "FLGStarWarsUniverse.h"
+#import "FLGUniverseTableViewController.h"
 
 
 
@@ -29,9 +30,10 @@
     FLGStarWarsUniverse *universe = [[FLGStarWarsUniverse alloc] init];
     
     // Creamos un controlador
-    
+    FLGUniverseTableViewController *tableVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStylePlain];
     
     // Creo el combinador
+    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
     
     // ----------------------------------------------------------------------------------
 //    UITabBarController *tabVC = [[UITabBarController alloc] init];
@@ -39,7 +41,7 @@
     // ----------------------------------------------------------------------------------
     
     // Mostramos el controlador en pantalla
-//    self.window.rootViewController = tabVC;
+    self.window.rootViewController = navVC;
     
     
     // Override point for customization after application launch.

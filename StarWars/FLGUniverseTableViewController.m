@@ -21,6 +21,7 @@
     
     if (self = [super initWithStyle:style]) {
         _model = model;
+        self.title = @"StarWars Universe";
     }
     return self;
 }
