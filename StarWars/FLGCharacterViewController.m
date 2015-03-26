@@ -29,7 +29,6 @@
 }
 
 
-
 // método de delegado --> el controlador es delegado de la vista.
 // la vista se ha cargado pero no se han posicionado todavia (tamaño y geometría no son correctos)
 //- (void)viewDidLoad {
@@ -49,6 +48,7 @@
     
 }
 
+
 #pragma mark - Memory
 
 // el dispositivo avisa a las Apps de que se está quedando sin memoria y cada App llama a estos métodos de todos los controladores. Es momento de "soltar lastre" para que el S.O. no nos mate a nosotros sino al resto de Apps
@@ -56,6 +56,7 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
 
 #pragma mark - Actions
 
@@ -76,5 +77,25 @@
     [self.navigationController pushViewController:wikiVC animated:YES];
 }
 
+
+#pragma mark - UISplitViewControllerDelegate
+
+- (void) splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
+    
+    //TODO: mirar en la documentación todos los modos
+    //TODO: detectar la situacion de orientacion inicial y adaptar la App
+    
+    // Averiguar si la tabla se ve o no
+    if (displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        
+        // La tabla esta oculta y cuelga del boton
+        // Ponemos ese boton en mi barra de navegación --> se podría poner en cualquier otro sitio que nos apetezca
+        self.navigationItem.leftBarButtonItem = svc.displayModeButtonItem;
+    }else {
+        // Se muestra la tabla
+        // Oculto el boton de la barra de navegacion
+        self.navigationItem.leftBarButtonItem = nil;
+    }
+}
 
 @end

@@ -29,19 +29,23 @@
     // Creamos un modelo
     FLGStarWarsUniverse *universe = [[FLGStarWarsUniverse alloc] init];
     
-    // Creamos un controlador
-    FLGUniverseTableViewController *tableVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
+    // Creamos los controladores
+    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[universe imperialAtIndex:0]];
     
-    // Creo el combinador
-    UINavigationController *navVC = [[UINavigationController alloc] initWithRootViewController:tableVC];
+    // Creo los navigationControllers
+    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
+    UINavigationController *charNavVC = [[UINavigationController alloc] initWithRootViewController:charVC];
     
-    // ----------------------------------------------------------------------------------
-//    UITabBarController *tabVC = [[UITabBarController alloc] init];
-//    tabVC.viewControllers = [self arrayOfControllers];
-    // ----------------------------------------------------------------------------------
+    // Creo el SplitViewController
+    UISplitViewController *spliVC = [[UISplitViewController alloc] init];
+    spliVC.viewControllers = @[universeNavVC, charNavVC];
+    
+    // Asignamos delegados
+    spliVC.delegate = charVC;
     
     // Mostramos el controlador en pantalla
-    self.window.rootViewController = navVC;
+    self.window.rootViewController = spliVC;
     
     
     // Override point for customization after application launch.

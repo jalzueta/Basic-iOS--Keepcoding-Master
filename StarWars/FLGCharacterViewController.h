@@ -11,7 +11,8 @@
 #import "FLGStarWarsCharacter.h"
 #import "CafPlayer.h"
 
-@interface FLGCharacterViewController : UIViewController
+// UISplitViewControllerDelegate: le dice al mundo que está capacitado para ser el delegado de un SplitViewController
+@interface FLGCharacterViewController : UIViewController<UISplitViewControllerDelegate>
 
 // No creamos nunca una variable global, para eso usaremos siempre las propiedades
 @property (strong, nonatomic) CafPlayer *player;
