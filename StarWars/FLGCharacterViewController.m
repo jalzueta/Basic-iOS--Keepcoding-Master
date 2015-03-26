@@ -46,6 +46,12 @@
     // Sincronizar model -> vista
     self.photoView.image = self.model.photo;
     
+    //TODO: detectar la situacion de orientacion inicial y adaptar el boton del SplitViewController
+    if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
+        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
+    }else {
+        self.navigationItem.leftBarButtonItem = nil;
+    }
 }
 
 
@@ -83,7 +89,6 @@
 - (void) splitViewController:(UISplitViewController *)svc willChangeToDisplayMode:(UISplitViewControllerDisplayMode)displayMode{
     
     //TODO: mirar en la documentación todos los modos
-    //TODO: detectar la situacion de orientacion inicial y adaptar la App
     
     // Averiguar si la tabla se ve o no
     if (displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
