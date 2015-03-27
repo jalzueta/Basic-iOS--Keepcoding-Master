@@ -45,8 +45,9 @@
     // Sincronizo modelo -> vista(s)
     [self syncViewWithModel];
     
-    // Asignamos al navigationItem del controlador el buton del SplitViewController.
+    // Asignamos al navigationItem del controlador el boton del SplitViewController.
     // Es el propio SPlitViewController el que se encarga de mostrarlo cuando sea necesario
+    // Si estoy dentro de un SplitVC me pongo el boton
     self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 

@@ -11,8 +11,7 @@
 #import "FLGWikiViewController.h"
 #import "FLGStarWarsUniverse.h"
 #import "FLGUniverseTableViewController.h"
-
-
+#import "Settings.h"
 
 @implementation AppDelegate
 
@@ -20,6 +19,18 @@
 
 // La App ha sido lanzada por el sistema operativo
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // NSUserDefaults: Valor por defecto para ultimo personaje seleccionado
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if (![def objectForKey:LAST_SELECTED_CHARACTER]) {
+        
+        // Guardamos un valor por defecto
+        [def setObject:@[@(IMPERIAL_SECTION),@0]
+                forKey:LAST_SELECTED_CHARACTER];
+        
+        // Por si acaso guardamos
+        [def synchronize];
+    }
     
     // Creamos una vista de tipo UIWindow: usamos el inicializador DESIGANDO (initWithFrame)
     self.window = [[UIWindow alloc]
@@ -78,9 +89,10 @@
 
 
 - (void) configureForPadWithModel: (FLGStarWarsUniverse *) universe{
+    
     // Creamos los controladores
     FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
-    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[universe imperialAtIndex:0]];
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[self lastSelectedCharacterInModel: universe]];
     
     // Creo los navigationControllers
     UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
@@ -112,6 +124,29 @@
     
     // Mostramos el controlador en pantalla
     self.window.rootViewController = universeNavVC;
+}
+
+
+- (FLGStarWarsCharacter *) lastSelectedCharacterInModel: (FLGStarWarsUniverse *) universe{
+    
+    // Obtengo el NSUserDefaults
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    // Saco las coordenadas del ultimo personaje
+    NSArray *coords = [def objectForKey:LAST_SELECTED_CHARACTER];
+    NSUInteger section = [[coords objectAtIndex:0] integerValue];
+    NSUInteger pos = [[coords objectAtIndex:1] integerValue];
+    
+    // Obtengo el personaje
+    FLGStarWarsCharacter *character;
+    if (section == IMPERIAL_SECTION) {
+        character = [universe imperialAtIndex:pos];
+    }else{
+        character = [universe rebelAtIndex:pos];
+    }
+    
+    // Lo devuelvo
+    return character;
 }
 
 

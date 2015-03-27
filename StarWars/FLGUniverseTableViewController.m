@@ -11,6 +11,7 @@
 #import "FLGCharacterViewController.h"
 #import "FLGStarWarsUniverse.h"
 #import "FLGStarWarsCharacter.h"
+#import "Settings.h"
 
 @interface FLGUniverseTableViewController ()
 
@@ -158,6 +159,12 @@
     // Enviamos la notificacion
     // [NSNotificationCenter defaultCenter]: NSNotificationCenter es un singleton, solo puede existir una instancia
     [[NSNotificationCenter defaultCenter] postNotification:note];
+    
+    // Guardamos las coordenadas del ultimo personaje en NSUserDefaults
+    NSArray *coords = @[@(indexPath.section), @(indexPath.row)];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:coords forKey:LAST_SELECTED_CHARACTER];
+    [def synchronize];
 }
 
 #pragma mark - FLGUniverseTableViewControllerDelegate
