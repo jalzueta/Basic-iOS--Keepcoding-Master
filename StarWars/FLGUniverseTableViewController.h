@@ -7,7 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FLGStarWarsUniverse.h"
+
+@class FLGStarWarsUniverse;
+@class FLGStarWarsCharacter;
 
 #define IMPERIAL_SECTION 0
 #define REBEL_SECTION 1

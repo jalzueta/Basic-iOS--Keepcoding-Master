@@ -8,6 +8,7 @@
 
 #import "FLGWikiViewController.h"
 #import "FLGUniverseTableViewController.h"
+#import "FLGStarWarsCharacter.h"
 
 
 @implementation FLGWikiViewController

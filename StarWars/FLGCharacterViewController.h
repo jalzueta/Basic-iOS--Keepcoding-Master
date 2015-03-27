@@ -7,10 +7,10 @@
 //
 
 @import UIKit;
-
-#import "FLGStarWarsCharacter.h"
-#import "CafPlayer.h"
 #import "FLGUniverseTableViewController.h"
+
+@class CafPlayer;
+@class FLGStarWarsCharacter;
 
 // UISplitViewControllerDelegate: le dice al mundo que está capacitado para ser el delegado de un SplitViewController
 @interface FLGCharacterViewController : UIViewController<UISplitViewControllerDelegate, FLGUniverseTableViewControllerDelegate>

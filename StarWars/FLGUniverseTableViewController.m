@@ -9,6 +9,8 @@
 @import UIKit;
 #import "FLGUniverseTableViewController.h"
 #import "FLGCharacterViewController.h"
+#import "FLGStarWarsUniverse.h"
+#import "FLGStarWarsCharacter.h"
 
 @interface FLGUniverseTableViewController ()
 

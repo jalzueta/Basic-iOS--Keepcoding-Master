@@ -7,6 +7,7 @@
 //
 
 #import "FLGStarWarsUniverse.h"
+#import "FLGStarWarsCharacter.h"
 
 @interface FLGStarWarsUniverse ()
 

@@ -8,6 +8,8 @@
 
 #import "FLGCharacterViewController.h"
 #import "FLGWikiViewController.h"
+#import "CafPlayer.h"
+#import "FLGStarWarsCharacter.h"
 
 @implementation FLGCharacterViewController
 
