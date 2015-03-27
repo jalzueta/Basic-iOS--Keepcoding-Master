@@ -45,12 +45,9 @@
     // Sincronizo modelo -> vista(s)
     [self syncViewWithModel];
     
-    // Detectar la situacion de orientacion inicial y adaptar el boton del SplitViewController
-    if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
-        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-    }else {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
+    // Asignamos al navigationItem del controlador el buton del SplitViewController.
+    // Es el propio SPlitViewController el que se encarga de mostrarlo cuando sea necesario
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
 

@@ -15,6 +15,7 @@
 
 @property (weak, nonatomic) IBOutlet UIWebView *browser;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *activityView;
+@property (nonatomic) BOOL canLoad;
 
 @property (strong, nonatomic) FLGStarWarsCharacter *model;
 

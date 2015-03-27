@@ -28,17 +28,22 @@
     // Asegurarse de que no se ocupa toda la pantalla cuando se esta en un combinador
     self.edgesForExtendedLayout = UIRectEdgeNone;
     
-    // Asignar delegados
-    self.browser.delegate = self;
-    
     // Nos damos de alta en las notificaciones
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center addObserver:self
-               selector:@selector(characterDidChange:)
-                   name:NEW_CHARACTER_NOTIFICATION_KEY
-                 object:nil];
+               selector:@selector(notifyThatCharacterDidChange:)
+                   name:CHARACTER_DID_CHANGE_NOTIFICATION_NAME
+                 object:nil]; // Quien es el sender de la notificacion: en este caso no da igual
     
     [self syncViewToModel];
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:animated];
+    
+    // Asignar delegados
+    self.browser.delegate = self;
 }
 
 - (void) viewWillDisappear:(BOOL)animated{
@@ -48,7 +53,6 @@
     // Nos damos de baja de las notificaciones
     NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
     [center removeObserver:self];
-    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -72,6 +76,8 @@
     // Paro y oculto el activityView
     [self.activityView setHidden:YES];
     [self.activityView stopAnimating];
+    
+    self.canLoad = NO;
 }
 
 // Vamos a controlar con este metodo la navegación dentro del webView
@@ -92,16 +98,23 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
         return NO;
     }
     else{
-        return YES;
+        return self.canLoad;
     }
 }
 
 
-#pragma mark - Notificaciones
-
-- (void) characterDidChange: (NSNotification *) aNotification{
-    self.model = [aNotification.userInfo objectForKey:CHARACTER_KEY];
+#pragma mark - Notifications
+// CHARACTER_DID_CHANGE_NOTIFICATION_NAME
+- (void) notifyThatCharacterDidChange: (NSNotification *) aNotification{
     
+    // Sacamos el personaje
+    // no usar "valueForKey", ya que eso es para KVC. Para diccionarios se usa "objectForKey"
+    FLGStarWarsCharacter *character = [aNotification.userInfo objectForKey:CHARACTER_KEY];
+    
+    // Actualizamos el modelo
+    self.model = character;
+    
+    // Sincronizamos modelo -> vista
     [self syncViewToModel];
 }
 
@@ -111,6 +124,8 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
 - (void) syncViewToModel{
     // Sincronizar modelo -> vista
     self.title = @"Wiki";
+    
+    self.canLoad = YES;
     
     [self.activityView setHidden:NO];
     [self.activityView startAnimating];

@@ -150,12 +150,13 @@
     }
     
     // Mandamos una notificacion -> para avisar a wikiViewController
-    // Creamos la notificacion
-    NSNotification *note = [NSNotification notificationWithName:NEW_CHARACTER_NOTIFICATION_KEY
+    // Creamos la notificacion (object es el remitente, el sender)
+    NSNotification *note = [NSNotification notificationWithName:CHARACTER_DID_CHANGE_NOTIFICATION_NAME
                                                          object:self
                                                        userInfo:@{CHARACTER_KEY: character}];
     
-    //Enviamos la notificacion
+    // Enviamos la notificacion
+    // [NSNotificationCenter defaultCenter]: NSNotificationCenter es un singleton, solo puede existir una instancia
     [[NSNotificationCenter defaultCenter] postNotification:note];
 }
 
