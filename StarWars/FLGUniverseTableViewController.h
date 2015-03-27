@@ -11,6 +11,8 @@
 
 #define IMPERIAL_SECTION 0
 #define REBEL_SECTION 1
+#define CHARACTER_KEY @"character"
+#define NEW_CHARACTER_NOTIFICATION_KEY @"currentCharacterHasChanged"
 
 // Con esta sentencia le adelantamos al compilador que esta clase está definida en otro sitio
 @class FLGUniverseTableViewController;

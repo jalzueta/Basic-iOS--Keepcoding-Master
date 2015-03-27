@@ -146,6 +146,15 @@
         // Envio el mensaje al delegado
         [self.delegate universeTableViewController:self didSelectCharacter:character];
     }
+    
+    // Mandamos una notificacion -> para avisar a wikiViewController
+    // Creamos la notificacion
+    NSNotification *note = [NSNotification notificationWithName:NEW_CHARACTER_NOTIFICATION_KEY
+                                                         object:self
+                                                       userInfo:@{CHARACTER_KEY: character}];
+    
+    //Enviamos la notificacion
+    [[NSNotificationCenter defaultCenter] postNotification:note];
 }
 
 

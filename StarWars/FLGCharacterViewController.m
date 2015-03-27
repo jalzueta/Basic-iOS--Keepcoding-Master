@@ -43,7 +43,7 @@
     // Sincronizo modelo -> vista(s)
     [self syncViewWithModel];
     
-    //TODO: detectar la situacion de orientacion inicial y adaptar el boton del SplitViewController
+    // Detectar la situacion de orientacion inicial y adaptar el boton del SplitViewController
     if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
         self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
     }else {
@@ -111,10 +111,6 @@
     
     // Sincronizo modelo -> vista(s)
     [self syncViewWithModel];
-    
-    // Apaño para que al estar viendo la wiki y se cambie de personaje, se vuelva al detalle del personaje
-    [self.navigationController popToRootViewControllerAnimated:YES];
-    
 }
 
 - (void) syncViewWithModel{
