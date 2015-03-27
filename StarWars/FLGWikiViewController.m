@@ -7,6 +7,7 @@
 //
 
 #import "FLGWikiViewController.h"
+#import "FLGUniverseTableViewController.h"
 
 
 @implementation FLGWikiViewController
@@ -15,10 +16,6 @@
     if (self = [super initWithNibName:nil
                                bundle:nil]) {
         _model = model;
-        self.title = @"Wiki";
-        
-        // Asignamos el tabBarItem para cuando esté contenido en un tabBarController
-        self.tabBarItem = [[UITabBarItem alloc] initWithTitle:@"Wiki" image:[UIImage imageNamed:@"icono_practica.png"] tag:1];
     }
     return self;
 }
@@ -33,12 +30,24 @@
     // Asignar delegados
     self.browser.delegate = self;
     
-    // Sincronizar modelo -> vista
-    [self.activityView setHidden:NO];
-    [self.activityView startAnimating];
+    // Nos damos de alta en las notificaciones
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center addObserver:self
+               selector:@selector(characterDidChange:)
+                   name:NEW_CHARACTER_NOTIFICATION_KEY
+                 object:nil];
     
-    // NSURLRequest: es un NSURL pero con una poitica de cache y un timeout
-    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiURL]];
+    [self syncViewToModel];
+}
+
+- (void) viewWillDisappear:(BOOL)animated{
+    
+    [super viewWillDisappear:animated];
+    
+    // Nos damos de baja de las notificaciones
+    NSNotificationCenter *center = [NSNotificationCenter defaultCenter];
+    [center removeObserver:self];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -86,6 +95,29 @@ shouldStartLoadWithRequest:(NSURLRequest *)request
     }
 }
 
+
+#pragma mark - Notificaciones
+
+- (void) characterDidChange: (NSNotification *) aNotification{
+    self.model = [aNotification.userInfo objectForKey:CHARACTER_KEY];
+    
+    [self syncViewToModel];
+}
+
+
+#pragma mark - Utils
+
+- (void) syncViewToModel{
+    // Sincronizar modelo -> vista
+    self.title = @"Wiki";
+    
+    [self.activityView setHidden:NO];
+    [self.activityView startAnimating];
+    
+    // NSURLRequest: es un NSURL pero con una poitica de cache y un timeout
+    self.browser.delegate = self;
+    [self.browser loadRequest:[NSURLRequest requestWithURL:self.model.wikiURL]];
+}
 
 
 
