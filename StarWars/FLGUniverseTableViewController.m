@@ -160,6 +160,16 @@
     [[NSNotificationCenter defaultCenter] postNotification:note];
 }
 
+#pragma mark - FLGUniverseTableViewControllerDelegate
+- (void) universeTableViewController:(FLGUniverseTableViewController *)universeTableViewController didSelectCharacter:(FLGStarWarsCharacter *)character{
+    
+    // Creamos un CharacterVC
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:character];
+    
+    // Hago un push
+    [self.navigationController pushViewController:charVC animated:YES];
+}
+
 
 #pragma mark - Utils
 

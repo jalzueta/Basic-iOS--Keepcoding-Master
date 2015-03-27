@@ -29,28 +29,19 @@
     // Creamos un modelo
     FLGStarWarsUniverse *universe = [[FLGStarWarsUniverse alloc] init];
     
-    // Creamos los controladores
-    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
-    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[universe imperialAtIndex:0]];
-    
-    // Creo los navigationControllers
-    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
-    UINavigationController *charNavVC = [[UINavigationController alloc] initWithRootViewController:charVC];
-    
-    // Creo el SplitViewController
-    UISplitViewController *spliVC = [[UISplitViewController alloc] init];
-    spliVC.viewControllers = @[universeNavVC, charNavVC];
-    
-    // Asignamos delegados
-    spliVC.delegate = charVC;
-    universeVC.delegate = charVC;
-    
-    // Mostramos el controlador en pantalla
-    self.window.rootViewController = spliVC;
-    
+    // Detectamos el tipo de pantalla
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        
+        // Tipo tableta
+        [self configureForPadWithModel:universe];
+    }else{
+        
+        // Tipo telefono
+        [self configureForPhoneWithModel:universe];
+    }
     
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor orangeColor];
+    self.window.backgroundColor = [UIColor clearColor];
     // orangeColor: método factory, método de clase
     
     // La mostramos
@@ -85,6 +76,43 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void) configureForPadWithModel: (FLGStarWarsUniverse *) universe{
+    // Creamos los controladores
+    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[universe imperialAtIndex:0]];
+    
+    // Creo los navigationControllers
+    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
+    UINavigationController *charNavVC = [[UINavigationController alloc] initWithRootViewController:charVC];
+    
+    // Creo el SplitViewController
+    UISplitViewController *spliVC = [[UISplitViewController alloc] init];
+    spliVC.viewControllers = @[universeNavVC, charNavVC];
+    
+    // Asignamos delegados
+    spliVC.delegate = charVC;
+    universeVC.delegate = charVC;
+    
+    // Mostramos el controlador en pantalla
+    self.window.rootViewController = spliVC;
+
+}
+
+- (void) configureForPhoneWithModel: (FLGStarWarsUniverse *) universe{
+    
+    // Creamos el controlador
+    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
+    
+    // Creo el combinador
+    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
+    
+    // Asignamos delegados
+    universeVC.delegate = universeVC;
+    
+    // Mostramos el controlador en pantalla
+    self.window.rootViewController = universeNavVC;
+}
 
 
 @end

@@ -29,8 +29,8 @@
 
 @end
 
-
-@interface FLGUniverseTableViewController : UITableViewController
+// <FLGUniverseTableViewControllerDelegate>: hacemos a esta clase que si no tiene delegado, ella misma sea al delegado -> modo iPhone
+@interface FLGUniverseTableViewController : UITableViewController<FLGUniverseTableViewControllerDelegate>
 
 @property (strong, nonatomic) FLGStarWarsUniverse *model;
 // id <FLGUniverseTableViewControllerDelegate>: cualquier tipo, pero que implemente el protocolo FLGUniverseTableViewControllerDelegate
