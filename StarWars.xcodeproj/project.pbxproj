@@ -75,6 +75,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5950D96E1AC60E620070B39D /* Settings.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Settings.h; sourceTree = "<group>"; };
 		59848AB61AC4997A0011BB18 /* FLGUniverseTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FLGUniverseTableViewController.h; sourceTree = "<group>"; };
 		59848AB71AC4997A0011BB18 /* FLGUniverseTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FLGUniverseTableViewController.m; sourceTree = "<group>"; };
 		59848ABA1AC4A4FE0011BB18 /* C3PO-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "C3PO-icon.png"; sourceTree = "<group>"; };
@@ -212,6 +213,7 @@
 				59B02D831AC3470800FC0463 /* Sound */,
 				59887D231AC22820003D6FB7 /* Resources */,
 				59887CD41AC203B6003D6FB7 /* Supporting Files */,
+				5950D96E1AC60E620070B39D /* Settings.h */,
 			);
 			path = StarWars;
 			sourceTree = "<group>";
@@ -594,6 +596,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -606,6 +609,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

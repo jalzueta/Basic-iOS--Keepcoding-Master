@@ -8,6 +8,8 @@
 
 #import "FLGCharacterViewController.h"
 #import "FLGWikiViewController.h"
+#import "CafPlayer.h"
+#import "FLGStarWarsCharacter.h"
 
 @implementation FLGCharacterViewController
 
@@ -43,12 +45,10 @@
     // Sincronizo modelo -> vista(s)
     [self syncViewWithModel];
     
-    // Detectar la situacion de orientacion inicial y adaptar el boton del SplitViewController
-    if (self.splitViewController.displayMode == UISplitViewControllerDisplayModePrimaryHidden) {
-        self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
-    }else {
-        self.navigationItem.leftBarButtonItem = nil;
-    }
+    // Asignamos al navigationItem del controlador el boton del SplitViewController.
+    // Es el propio SPlitViewController el que se encarga de mostrarlo cuando sea necesario
+    // Si estoy dentro de un SplitVC me pongo el boton
+    self.navigationItem.leftBarButtonItem = self.splitViewController.displayModeButtonItem;
 }
 
 

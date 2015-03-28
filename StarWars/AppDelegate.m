@@ -11,8 +11,7 @@
 #import "FLGWikiViewController.h"
 #import "FLGStarWarsUniverse.h"
 #import "FLGUniverseTableViewController.h"
-
-
+#import "Settings.h"
 
 @implementation AppDelegate
 
@@ -20,6 +19,18 @@
 
 // La App ha sido lanzada por el sistema operativo
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    // NSUserDefaults: Valor por defecto para ultimo personaje seleccionado
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    if (![def objectForKey:LAST_SELECTED_CHARACTER]) {
+        
+        // Guardamos un valor por defecto
+        [def setObject:@[@(IMPERIAL_SECTION),@0]
+                forKey:LAST_SELECTED_CHARACTER];
+        
+        // Por si acaso guardamos
+        [def synchronize];
+    }
     
     // Creamos una vista de tipo UIWindow: usamos el inicializador DESIGANDO (initWithFrame)
     self.window = [[UIWindow alloc]
@@ -29,28 +40,19 @@
     // Creamos un modelo
     FLGStarWarsUniverse *universe = [[FLGStarWarsUniverse alloc] init];
     
-    // Creamos los controladores
-    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
-    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[universe imperialAtIndex:0]];
-    
-    // Creo los navigationControllers
-    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
-    UINavigationController *charNavVC = [[UINavigationController alloc] initWithRootViewController:charVC];
-    
-    // Creo el SplitViewController
-    UISplitViewController *spliVC = [[UISplitViewController alloc] init];
-    spliVC.viewControllers = @[universeNavVC, charNavVC];
-    
-    // Asignamos delegados
-    spliVC.delegate = charVC;
-    universeVC.delegate = charVC;
-    
-    // Mostramos el controlador en pantalla
-    self.window.rootViewController = spliVC;
-    
+    // Detectamos el tipo de pantalla
+    if ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPad) {
+        
+        // Tipo tableta
+        [self configureForPadWithModel:universe];
+    }else{
+        
+        // Tipo telefono
+        [self configureForPhoneWithModel:universe];
+    }
     
     // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor orangeColor];
+    self.window.backgroundColor = [UIColor clearColor];
     // orangeColor: método factory, método de clase
     
     // La mostramos
@@ -85,6 +87,67 @@
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
 
+
+- (void) configureForPadWithModel: (FLGStarWarsUniverse *) universe{
+    
+    // Creamos los controladores
+    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:[self lastSelectedCharacterInModel: universe]];
+    
+    // Creo los navigationControllers
+    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
+    UINavigationController *charNavVC = [[UINavigationController alloc] initWithRootViewController:charVC];
+    
+    // Creo el SplitViewController
+    UISplitViewController *spliVC = [[UISplitViewController alloc] init];
+    spliVC.viewControllers = @[universeNavVC, charNavVC];
+    
+    // Asignamos delegados
+    spliVC.delegate = charVC;
+    universeVC.delegate = charVC;
+    
+    // Mostramos el controlador en pantalla
+    self.window.rootViewController = spliVC;
+
+}
+
+- (void) configureForPhoneWithModel: (FLGStarWarsUniverse *) universe{
+    
+    // Creamos el controlador
+    FLGUniverseTableViewController *universeVC = [[FLGUniverseTableViewController alloc] initWithModel:universe style:UITableViewStyleGrouped];
+    
+    // Creo el combinador
+    UINavigationController *universeNavVC = [[UINavigationController alloc] initWithRootViewController:universeVC];
+    
+    // Asignamos delegados
+    universeVC.delegate = universeVC;
+    
+    // Mostramos el controlador en pantalla
+    self.window.rootViewController = universeNavVC;
+}
+
+
+- (FLGStarWarsCharacter *) lastSelectedCharacterInModel: (FLGStarWarsUniverse *) universe{
+    
+    // Obtengo el NSUserDefaults
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    
+    // Saco las coordenadas del ultimo personaje
+    NSArray *coords = [def objectForKey:LAST_SELECTED_CHARACTER];
+    NSUInteger section = [[coords objectAtIndex:0] integerValue];
+    NSUInteger pos = [[coords objectAtIndex:1] integerValue];
+    
+    // Obtengo el personaje
+    FLGStarWarsCharacter *character;
+    if (section == IMPERIAL_SECTION) {
+        character = [universe imperialAtIndex:pos];
+    }else{
+        character = [universe rebelAtIndex:pos];
+    }
+    
+    // Lo devuelvo
+    return character;
+}
 
 
 @end

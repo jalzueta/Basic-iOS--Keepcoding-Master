@@ -9,6 +9,9 @@
 @import UIKit;
 #import "FLGUniverseTableViewController.h"
 #import "FLGCharacterViewController.h"
+#import "FLGStarWarsUniverse.h"
+#import "FLGStarWarsCharacter.h"
+#import "Settings.h"
 
 @interface FLGUniverseTableViewController ()
 
@@ -148,13 +151,30 @@
     }
     
     // Mandamos una notificacion -> para avisar a wikiViewController
-    // Creamos la notificacion
-    NSNotification *note = [NSNotification notificationWithName:NEW_CHARACTER_NOTIFICATION_KEY
+    // Creamos la notificacion (object es el remitente, el sender)
+    NSNotification *note = [NSNotification notificationWithName:CHARACTER_DID_CHANGE_NOTIFICATION_NAME
                                                          object:self
                                                        userInfo:@{CHARACTER_KEY: character}];
     
-    //Enviamos la notificacion
+    // Enviamos la notificacion
+    // [NSNotificationCenter defaultCenter]: NSNotificationCenter es un singleton, solo puede existir una instancia
     [[NSNotificationCenter defaultCenter] postNotification:note];
+    
+    // Guardamos las coordenadas del ultimo personaje en NSUserDefaults
+    NSArray *coords = @[@(indexPath.section), @(indexPath.row)];
+    NSUserDefaults *def = [NSUserDefaults standardUserDefaults];
+    [def setObject:coords forKey:LAST_SELECTED_CHARACTER];
+    [def synchronize];
+}
+
+#pragma mark - FLGUniverseTableViewControllerDelegate
+- (void) universeTableViewController:(FLGUniverseTableViewController *)universeTableViewController didSelectCharacter:(FLGStarWarsCharacter *)character{
+    
+    // Creamos un CharacterVC
+    FLGCharacterViewController *charVC = [[FLGCharacterViewController alloc] initWithModel:character];
+    
+    // Hago un push
+    [self.navigationController pushViewController:charVC animated:YES];
 }
 
 

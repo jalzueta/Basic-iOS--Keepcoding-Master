@@ -7,12 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "FLGStarWarsUniverse.h"
+
+@class FLGStarWarsUniverse;
+@class FLGStarWarsCharacter;
 
 #define IMPERIAL_SECTION 0
 #define REBEL_SECTION 1
+
 #define CHARACTER_KEY @"character"
-#define NEW_CHARACTER_NOTIFICATION_KEY @"currentCharacterHasChanged"
+#define CHARACTER_DID_CHANGE_NOTIFICATION_NAME @"characterDidChanged"
 
 // Con esta sentencia le adelantamos al compilador que esta clase está definida en otro sitio
 @class FLGUniverseTableViewController;
@@ -26,8 +29,8 @@
 
 @end
 
-
-@interface FLGUniverseTableViewController : UITableViewController
+// <FLGUniverseTableViewControllerDelegate>: hacemos a esta clase que si no tiene delegado, ella misma sea al delegado -> modo iPhone
+@interface FLGUniverseTableViewController : UITableViewController<FLGUniverseTableViewControllerDelegate>
 
 @property (strong, nonatomic) FLGStarWarsUniverse *model;
 // id <FLGUniverseTableViewControllerDelegate>: cualquier tipo, pero que implemente el protocolo FLGUniverseTableViewControllerDelegate

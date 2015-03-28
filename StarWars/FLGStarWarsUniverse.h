@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "FLGStarWarsCharacter.h"
+@class FLGStarWarsCharacter;
 
 // swapi.co -> servicios REST sobre Star Wars
 @interface FLGStarWarsUniverse : NSObject
